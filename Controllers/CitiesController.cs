@@ -48,5 +48,13 @@ namespace SehirRehberi.API.Controllers
             return Ok(cityToReturn);
         }
 
+        [HttpGet]
+        [Route("Photos")]
+        public ActionResult GetPhotosbyCity(int cityId)
+        {
+            var photos = _appRepository.GetPhotosByCity(cityId);
+            return Ok(photos);
+        }
+
     }
 }
