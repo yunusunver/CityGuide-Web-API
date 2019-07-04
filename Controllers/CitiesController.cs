@@ -39,5 +39,14 @@ namespace SehirRehberi.API.Controllers
             return Ok(city);
         }
 
+        [HttpGet]
+        [Route("detail")]
+        public ActionResult GetCitiesById( int id)
+        {
+            var city = _appRepository.GetCitybyId(id);
+            var cityToReturn = _mapper.Map<CityForDetailDto>(city);
+            return Ok(cityToReturn);
+        }
+
     }
 }
